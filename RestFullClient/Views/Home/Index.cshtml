@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<input type="button" name="name" value="Tıkla" id="btnTikla"/>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#btnTikla").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:64325/Sunucu.svc/Deneme",
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function () {
+                        alert("Hata oldu");
+                    }
+                });
+            });
+        });
+    </script>
+    }
